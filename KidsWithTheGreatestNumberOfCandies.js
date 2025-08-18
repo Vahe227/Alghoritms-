@@ -1,3 +1,5 @@
+// Problem
+
 // There are n kids with candies. You are given an integer array candies, where each candies[i] represents the number of candies the ith kid has, and an integer extraCandies, denoting the number of extra candies that you have.
 
 // Return a boolean array result of length n, where result[i] is true if, after giving the ith kid all the extraCandies, they will have the greatest number of candies among all the kids, or false otherwise.
@@ -24,6 +26,15 @@
 
 // Input: candies = [12,1,12], extraCandies = 10
 // Output: [true,false,true]
+
+// How I Solve This Problem
+
+// To solve this problem, I first initialized two variables: result and littleNumber. The variable result will store boolean values, while littleNumber will be updated during each iteration of 
+// the loop whenever we find a value in the candies array that is greater than the current littleNumber; this value is then assigned to littleNumber.The algorithm uses three loops:In the first loop, 
+// we find the maximum value in the candies array.In the second loop, we add the extraCandies value to each element of the candies array.In the third loop, we iterate over all elements of 
+// the updated candies array and check: if an element is greater than or equal to littleNumber, we push true to the result array; otherwise, we push false.Although at first glance some might 
+// think the algorithm has O(N log N) complexity, a closer inspection shows that each loop runs linearly over the input. Therefore, the overall time complexity is O(N), since all loops iterate 
+// proportionally to the size of the input.The problem is still under development, as additional testing may be required to ensure correctness for all edge cases.
 
 /**
  * @param {number[]} candies
