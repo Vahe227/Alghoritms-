@@ -1,5 +1,7 @@
 // The solution to this problem is under development because this solution is not effective in all cases.
 
+// Problem
+
 // Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 
 // Notice that the solution set must not contain duplicate triplets.
@@ -24,6 +26,13 @@
 // Input: nums = [0,0,0]
 // Output: [[0,0,0]]
 // Explanation: The only possible triplet sums up to 0.
+
+// How I Solve This Problem
+
+// To solve this problem, I implemented a brute-force approach using nested loops. The algorithm iterates through all possible triplets in the array and checks if their sum equals zero. 
+// If such a triplet is found, it is returned as the solution.
+// The time complexity of this approach is O(N³), which is highly inefficient and not optimal for larger inputs. A more efficient solution will be required to handle such cases.
+// The problem is still under development, as it does not provide the best performance in its current form.
 
 /**
  * @param {number[]} nums
