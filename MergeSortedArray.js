@@ -1,3 +1,5 @@
+// Problem
+
 // You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
 
 // Merge nums1 and nums2 into a single array sorted in non-decreasing order.
@@ -24,6 +26,18 @@
 // The result of the merge is [1].
 // Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
 
+// How I Solve This Problem
+
+// To solve this problem, we need to merge two sorted arrays.
+// First, we create a variable j that will serve as the index pointer for nums2.
+// Then we initialize allLength as nums1.length - nums2.length, which represents the position in nums1 where the extra zeros (empty slots) begin.
+// Next, we run a loop for (let i = 0; i < m + n; i++):
+// If nums1[allLength] === 0, we replace that zero with nums2[j], then increment both j and allLength.
+// Otherwise, we simply continue.
+// Finally, since we inserted elements but they are not guaranteed to be in sorted order, we call
+// nums1.sort((a, b) => a - b); to make sure the final array is sorted.
+// The time complexity of this solution is approximately O((m + n) log (m + n)), because of the final sorting step.
+
 /**
  * @param {number[]} nums1
  * @param {number} m
@@ -34,7 +48,6 @@
 var merge = function(nums1, m, nums2, n) {
     let j = 0;
     let allLength = nums1.length - nums2.length;
-    let originalLenght = allLength;
     for(let i = 0; i < m + n;i++) {
         if(nums1[allLength] === 0) {
             nums1[allLength] = nums2[j];
