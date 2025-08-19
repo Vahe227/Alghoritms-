@@ -20,7 +20,17 @@
 
 // How I Solve This Problem
 
-
+// To solve this problem, we first check if x is a negative number. If it is, we immediately return false.
+// If x is non-negative, we proceed by creating two variables: original and reversed.
+// original stores the initial value of x, because x will be modified in the following steps.
+// reversed starts at 0 and will store the reversed digits of x.
+// We then enter a while loop with the condition x > 0:
+// Extract the last digit of x and store it in a variable called lastNum.
+// Update reversed using the formula: reversed = (reversed * 10) + lastNum.
+// Remove the last digit from x by dividing x by 10 and rounding down (integer division).
+// This process repeats until x becomes 0.
+// Finally, we return whether original is equal to reversed, which determines if the integer is a palindrome.
+// The time complexity of this solution is O(N), where N is the number of digits in x.
 
 /**
  * @param {number} x
