@@ -1,3 +1,5 @@
+// Problem 
+
 // Given a string s and an integer k, return the maximum number of vowel letters in any substring of s with length k.
 
 // Vowel letters in English are 'a', 'e', 'i', 'o', and 'u'.
@@ -18,6 +20,18 @@
 // Output: 2
 // Explanation: "lee", "eet" and "ode" contain 2 vowels.
 
+// How I Solve This Problem
+
+// To solve this problem, we first create an array called vowels, which contains all the English vowel characters. We then initialize a variable count with the value 0.
+// Next, we check if k is greater than count. If so, we run a loop that processes the string. Inside this loop, if count is greater than or equal to k, we return count.
+// We then create a variable called word, which sequentially stores each value from the vowels array. Using a nested loop, we check whether word matches the current character in the string s.
+// If they match, we increment count by 1 and break the inner loop.
+// Otherwise, we continue the process.
+// Finally, if no further matches are found, we return count.
+// The time complexity of this solution is O(N²), since for each character in the string we potentially compare against all vowels in the array. This quadratic complexity is not the most efficient approach 
+// for solving this problem.
+// The problem is still under development, as certain cases are not yet handled optimally.
+
 /**
  * @param {string} s
  * @param {number} k
@@ -30,7 +44,6 @@ var maxVowels = function(s, k) {
         for(let i = 0; i < s.length; i++) {
             if(count >= k) {
                 return count;
-                break;
             };
             let word = vovels[i];
             for(let j = 0;j < s.length;j++) {
