@@ -1,4 +1,4 @@
-// The solution to this problem is under development because this solution is not effective in all cases.
+// Problem
 
 // Given a string s, return whether s is a valid number.
 
@@ -37,24 +37,31 @@
 
 // Output: false
 
+// How I Solve This Problem
+
+// To solve this problem, I used a try-catch structure.
+// As we know, the code inside the try block executes normally unless an error occurs. If an error is thrown, the catch block handles it.
+// Here, we use the Number function to attempt converting the string s into a numeric value.
+// If the conversion is successful, Number(s) returns a number.
+// If the conversion fails, it throws an error, which is caught in the catch block, and we return false because s cannot be interpreted as a valid number.
+// Additionally, we check if the result is NaN and return false in that case.
+// We also check for Infinity, -Infinity, and +Infinity, since Number would consider them valid, but for this problem, they are not acceptable, so we return false in these cases.
+// The time complexity of this solution is O(1) because it involves a fixed number of operations regardless of input size.
+
 /**
  * @param {string} s
  * @return {boolean}
  */
 
 var isNumber = function(s) {
-    let allNumbers = {
-        "0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5,
-        "6": 6, "7": 7, "8": 8, "9": 9
-    };
-
-    let state = false;
-    for(let i = 0; i < s.length; i++) {
-        if(allNumbers[s[i]] == s[i] || allNumbers[s[i + 1]] == s[i] || allNumbers[s[i + 2]] == s[i] || allNumbers[s[i + 3]] == s[i] || allNumbers[s[i + 4]] == s[i] || allNumbers[s[i + 5]] == s[i] || allNumbers[s[i + 6]] == s[i] || allNumbers[s[i + 7]] == s[i] || allNumbers[s[i + 8]] == s[i] || allNumbers[s[i + 9]] == s[i]) {
-            state = true;
-        } else {
+    try {
+        let result = Number(s);
+        if(s === "Infinity" || s === "-Infinity" || s === "+Infinity") return false;
+        if(isNaN(result)) {
             return false;
         };
+        return true;
+    } catch(error) {
+        return false;
     };
-    return state;
 };
