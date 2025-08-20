@@ -1,3 +1,5 @@
+// Problem
+
 // Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
 // Symbol       Value
@@ -37,6 +39,16 @@
  * @param {string} s
  * @return {number}
  */
+
+// How I Solve This Problem
+
+// To solve this problem, we first create an object that stores all Roman numeral symbols along with their corresponding values.
+// Then, we declare a variable called result, initialized to 0.
+// Next, we loop through all the characters of s.
+// For each character, we check: if the current symbol’s value is less than the value of the next symbol, we subtract it from the result. This is a special rule in Roman numerals.
+// Otherwise, we add the value to the result.
+// Finally, we return result.
+// The time complexity is O(N) because it depends on the number of characters in the input.
 
 var romanToInt = function(s) {
     let romeNumbers = {

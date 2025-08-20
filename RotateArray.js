@@ -1,3 +1,5 @@
+// Problem
+
 // Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
 // Example 1:
@@ -15,6 +17,17 @@
 // Explanation: 
 // rotate 1 steps to the right: [99,-1,-100,3]
 // rotate 2 steps to the right: [3,99,-1,-100]
+
+// How I Solve This Problem
+
+// To solve this problem, the approach is fairly straightforward.
+// First, we declare a variable to store the length of nums and calculate k % length to handle cases where k is larger than the array size. This gives us the number of elements to rotate from the end.
+// Next, we create a variable rotate and use slice(-k) to extract the last k elements from the array.
+// Then, we concatenate this with the remaining elements from the start of the array using concat, which produces a rotated version of the array.
+// However, the problem requires that we modify nums in-place without using another variable for the final result. To achieve this, we loop through all elements and overwrite each element in nums 
+// with the corresponding element from the rotated array.
+// Finally, we return the modified nums.
+// The time complexity of this solution is O(N), since each element of the array is processed once.
 
 /**
  * @param {number[]} nums
