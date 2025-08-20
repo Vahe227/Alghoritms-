@@ -1,3 +1,5 @@
+// Problem
+
 // I have two solutions for this problem, the first solution is in this file and the second is in this file RemoveDuplicatesFromSortedArray1.js
 
 // Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
@@ -33,6 +35,16 @@
 // Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
 // Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
 // It does not matter what you leave beyond the returned k (hence they are underscores).
+
+// How I Solve This Problem
+
+// To solve this problem, we first create a variable called result. This variable will store the filtered values from the array nums.
+// We use the filter() method on nums, which iterates over every element in the array. Inside the filter callback, we check whether the current element is equal to the target value we are searching for. 
+// If the condition evaluates to true, that element is included in the result array.
+// Finally, we return the result array, which contains all the occurrences of the target element from nums.
+// The time complexity of this solution is O(N²) in the worst case. This is because for each element in the nums array, we might internally check again using operations that can lead to 
+// nested iterations depending on how the target matching is implemented or if there are multiple targets to check against.
+// This is not the most optimal solution for large input sizes, and it can be further improved using alternative methods such as Set, Map, or more efficient search algorithms, depending on the exact requirements.
 
 /**
  * @param {number[]} nums
