@@ -34,13 +34,14 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
+    const map = new Map();
     for(let i = 0; i < nums.length; i++) {
-        for(let j = 0; j < i;j++) {
-            if(nums[j] + nums[i] == target) {
-                return [j,i];
-            } else {
-                continue;
-            };
+        let num = nums[i];
+        let comploment = target - num;
+        if(map.has(comploment)) {
+            return [map.get(comploment), i];
         };
+        map.set(num, i);
     };
+    return [];
 };

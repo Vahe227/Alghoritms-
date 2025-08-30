@@ -24,7 +24,8 @@
 
 // How I solve This problem
 
-// In this problem, I started by initializing a variable called candys with a value of 1, since each child should receive at least one candy. Then, as I iterate through the children:
+// In this problem, I started by initializing a variable called candys with a value of 1, since each child should receive at least one candy. Then, as I iterate through the 
+// children:
 // If the current child’s score is higher than the score of the child behind, the current child receives 2 candies.
 // If the current child’s score is higher than the score of the child before, the current child again receives 2 candies.
 // In the opposite case, we simply increment the number of candies by 1.
