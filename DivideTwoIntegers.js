@@ -1,0 +1,48 @@
+// Problem
+
+// Given two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator.
+
+// The integer division should truncate toward zero, which means losing its fractional part. For example, 8.345 would be truncated to 8, and -2.7335 would be truncated to -2.
+
+// Return the quotient after dividing dividend by divisor.
+
+// Note: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231, 231 − 1]. For this problem, if the quotient is strictly greater than 231 - 1, then return 231 - 1, and if the quotient is strictly less than -231, then return -231.
+
+// Example 1:
+
+// Input: dividend = 10, divisor = 3
+// Output: 3
+// Explanation: 10/3 = 3.33333.. which is truncated to 3.
+// Example 2:
+
+// Input: dividend = 7, divisor = -3
+// Output: -2
+// Explanation: 7/-3 = -2.33333.. which is truncated to -2.
+ 
+// Constraints:
+
+// -231 <= dividend, divisor <= 231 - 1
+// divisor != 0
+
+// How I Solve This Problem
+
+// Solving this problem is fairly straightforward — it mainly requires recalling two methods from the Math library. First, we calculate the quotient of the dividend and the divisor. 
+// Next, we check whether the result exceeds the 32-bit integer limit. If it does, we simply return the maximum 32-bit integer value, which is 2147483647.
+// If the result does not exceed the 32-bit range, we then check its sign. If the number is negative, we use the Math.ceil method to round it upward toward zero. If it is 
+// non-negative, we apply Math.floor, which rounds the number downward.
+// The time complexity of this solution is O(1).
+
+/**
+ * @param {number} dividend
+ * @param {number} divisor
+ * @return {number}
+ */
+var divide = function(dividend, divisor) {
+    let result = dividend / divisor;
+    if(result > 2147483647) return 2147483647;
+    if(result < 0) {
+        return Math.ceil(result);
+    } else {
+        return Math.floor(result);
+    };
+};
