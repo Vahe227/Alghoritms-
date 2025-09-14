@@ -74,7 +74,7 @@ var doesAliceWin = function(s) {
                 i++;
                 if(i > s.length - 1) {
                     if(isAlicePlaying === true) return false;
-                    return true;
+                    return true;    
                 };
             };
         } else {
