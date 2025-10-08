@@ -21,24 +21,19 @@
 
 // How I Solve This Problem
 
-// To solve this problem, I chose one of the most straightforward approaches. For every character in t, we check if it exists in s. If it does, we remove it from s. 
-// By the end of the process, if all characters of t are found within s, the length of s becomes zero, which means t is indeed an anagram of s. On the other hand, 
-// if any characters remain in s, then t cannot be considered an anagram of s.
-// This method effectively solves the problem. The time complexity is O(N), as the algorithm runs proportionally to the number of input characters.
+// To solve this problem, we use well-known JS methods. We obtain the sorted versions of the two texts and compare whether they are the same; if so, we return true. However, 
+// other methods are also necessary. For example, toLowerCase ensures that there are no uppercase letters in either text, replace with a RegExp is used to remove spaces and 
+// other unwanted characters from the text and replace them with empty strings, and split is used to divide all the characters of the text into separate elements for sorting. 
+// The time complexity is O(n log n).
 
 /**
  * @param {string} s
  * @param {string} t
  * @return {boolean}
  */
+
 var isAnagram = function(s, t) {
-    if (s.length !== t.length) return false;
-    for (let i = 0; i < t.length; i++) {
-        let index = s.indexOf(t[i]);
-        if (index === -1) {
-            return false;
-        };
-        s = s.slice(0, index) + s.slice(index + 1);
-    };
-    return s.length === 0;
+    let sSort = s.toLowerCase().replace('/\s/g', "").split("").sort().join("");
+    let tSort = t.toLowerCase().replace('/\s/g', "").split("").sort().join("");
+    return sSort === tSort;
 };
